@@ -10,9 +10,6 @@ var  slingShot;
 var polygon;
 
 
-function preload() {
-    polygon = loadImage("TowerSiege-1-main/polygon.png");
-}
 
 function setup(){
     var canvas = createCanvas(1200,400);

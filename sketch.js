@@ -3,7 +3,7 @@ const World= Matter.World;
 const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
 
-var engine, world;
+var engine, world, matter;
 //var box1, pig1;
 //var backgroundImg,platform;
 var  slingShot;
@@ -13,8 +13,10 @@ var polygon;
 
 function setup(){
     var canvas = createCanvas(1200,400);
+    World = engine.world;
     engine = Engine.create();
-    world = engine.world;
+   Text("SCORE: "+ score,750,40);
+
     g1 = new Ground(600,height,1200,20);
     g2 = new Ground(320,235,150.20);
 
@@ -39,6 +41,17 @@ function setup(){
 imageMode(CENTER)
 
 image(polygon_img,polygon.position.x,polygon.position.y,40,40 );
+
+b8.score();
+b9.score();
+b10.score();
+b11.score();
+b12.score();
+b13.score();
+b14.score();
+b15.score();
+b16.score();
+
 }
 function draw(){
     
@@ -57,3 +70,9 @@ function draw(){
    b16.display();
    polygon.display();
 }
+function mouseDragged(){
+    Matter.Body.setPosition (bird.body,{x:mouseX, y:mouseY});
+    }
+     function mouseReleased(){
+    sling.fly();
+     }

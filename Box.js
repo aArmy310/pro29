@@ -10,6 +10,11 @@ class Box {
       imageMode(CENTER);
       image(this.image, 0, 0, this.width, this.height);
       pop();
+      score() 
+      {if(this.visibility<0 && this.visibility>-105){
+          score++;
+        }
+      }
     }
   };
   
